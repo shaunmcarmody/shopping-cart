@@ -1,16 +1,16 @@
 <template>
   <section class="product-details">
-    <ShoppingCartHeader title="Shopping Cart"/>
+    <Header title="Shopping Cart"/>
   </section>
 </template>
 
 <script>
-import ShoppingCartHeader from './ShoppingCartHeader.vue'
+import Header from './Header.vue'
 
 export default {
   name: 'ProductDetails',
   components: {
-    ShoppingCartHeader,
+    Header,
   }
 }
 </script>

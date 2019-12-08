@@ -1,16 +1,19 @@
 <template>
   <div id="app">
     <ShoppingCart />
+    <CrossPromotion />
   </div>
 </template>
 
 <script>
 import ShoppingCart from './components/ShoppingCart.vue'
+import CrossPromotion from './components/CrossPromotion.vue'
 
 export default {
   name: 'app',
   components: {
-    ShoppingCart
+    ShoppingCart,
+    CrossPromotion
   }
 }
 </script>

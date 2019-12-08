@@ -1,16 +1,16 @@
 <template>
   <aside class="summary">
-    <ShoppingCartHeader title="Order Summary"/>
+    <Header title="Order Summary" />
   </aside>
 </template>
 
 <script>
-import ShoppingCartHeader from './ShoppingCartHeader.vue'
+import Header from './Header.vue'
 
 export default {
   name: 'ShoppingCart',
   components: {
-    ShoppingCartHeader,
+    Header
   }
 }
 </script>
