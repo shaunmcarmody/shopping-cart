@@ -23,7 +23,7 @@ export default {
 .summary-items {
   display: flex;
   border-bottom: 1px solid rgba(33, 34, 64, 0.16);
-  padding-bottom: 60px;
+  padding-bottom: 20px;
 }
 
 .summary-description {

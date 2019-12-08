@@ -7,6 +7,7 @@
     />
     <ProductQuantity
       v-bind:quantity="quantity"
+      v-bind:id="id"
     />
     <!-- Price per unit -->
     <Price

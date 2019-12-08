@@ -35,5 +35,6 @@ export default {
 .product-details {
   flex: 1;
   padding: 40px 32px 40px 56px;
+  overflow-y: auto;
 }
 </style>

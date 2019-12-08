@@ -64,15 +64,28 @@ export const store = new Vuex.Store({
     ]
   },
   mutations: {
-    // addProduct(state, product) {
-    //   state.basket.
-    // }
-  },
-  actions: {
-    addProduct({ commit }, product) {
-      commit('addProduct', product)
+    addProduct(state, id) {
+      const numberOfItems = state.basket.numberOfItems
+      state.basket.contents.map(el => {
+        if (el.id === id) {
+          el.quantity += 1
+          el.totalPrice += el.cost
+          state.basket.numberOfItems += 1
+          state.basket.totalCost += el.price
+        }
+      })
+
+      if (numberOfItems === state.basket.numberOfItems) {
+        const [item] = state.SKU.filter(el => el.id == id);
+        state.basket.contents.push({ ...item, totalPrice: item.price, quantity: 1 })
+        state.basket.totalCost += item.price
+        state.basket.numberOfItems += 1
+      }
+      // eslint-disable-next-line no-console
+      console.log(state.basket.totalCost);
     }
   },
+  actions: {},
   getters: {
     basket: state => {
       return state.basket.contents

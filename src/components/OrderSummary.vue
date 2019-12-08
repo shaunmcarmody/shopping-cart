@@ -26,6 +26,7 @@ export default {
 
 <style scoped>
 .summary {
+  border-radius: 4px;
   padding: 40px 32px;
   width: 312px;
   background-color: #f3f3f3;

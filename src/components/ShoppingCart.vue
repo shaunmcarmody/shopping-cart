@@ -23,12 +23,9 @@ export default {
   border-radius: 4px;
   background-color: #ffffff;
   display: flex;
-  overflow-x: hidden;
-  overflow-y: auto;
   margin: auto;
-  margin-top: 60px;
   max-width: 1088px;
-  max-height: 648px;
+  max-height: 600px;
   width: calc(100% - 64px);
 }
 

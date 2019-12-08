@@ -13,6 +13,9 @@ export default {
 </script>
 
 <style scoped>
+.discounts h3 {
+  font-size: 1rem;
+}
 .discounts button {
   border-radius: 4px;
   background: #7350ff;

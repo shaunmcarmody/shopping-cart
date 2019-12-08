@@ -36,7 +36,7 @@ export default {
   background-color: #ffffff;
   overflow-x: auto;
   margin: auto;
-  margin-top: 60px;
+  margin-top: 20px;
   max-width: 1088px;
   max-height: 648px;
   padding: 40px 32px 40px 56px;

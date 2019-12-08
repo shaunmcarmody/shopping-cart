@@ -2,15 +2,24 @@
   <div class="item-quantity">
     <button class="adjust">-</button>
     <div class="quantity">{{ quantity }}</div>
-    <button class="adjust">+</button>
+    <button
+      v-on:click="addProduct(id)"
+      class="adjust"
+    >+</button>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'ProductQuantity',
   props: {
+    id: String,
     quantity: Number
+  },
+  methods: {
+    ...mapMutations(['addProduct'])
   }
 }
 </script>

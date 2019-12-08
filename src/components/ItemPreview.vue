@@ -5,11 +5,16 @@
       <h1 class="item-title">{{ title }}</h1>
     </div>
     <p class="item-price">€{{ price }}</p>
-    <button class="item-purchase">Buy</button>
+    <button
+      v-on:click="addProduct(id)"
+      class="item-purchase"
+    >Buy</button>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
   name: 'ItemPreview',
   props: {
@@ -17,6 +22,9 @@ export default {
     image: String,
     price: Number,
     title: String,
+  },
+  methods: {
+    ...mapMutations(['addProduct'])
   }
 }
 </script>
