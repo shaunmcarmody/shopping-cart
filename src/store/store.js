@@ -12,7 +12,8 @@ export const store = new Vuex.Store({
           title: 'City Guide',
           image: 'https://images-na.ssl-images-amazon.com/images/I/711ZjU9uamL._AC_UL400_SR278,400_.jpg',
           price: 8,
-          quantity: 1
+          quantity: 1,
+          totalPrice: 8
         }
       ],
       count: 1,

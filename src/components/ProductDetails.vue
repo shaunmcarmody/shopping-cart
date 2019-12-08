@@ -8,7 +8,9 @@
       v-bind:title="product.title"
       v-bind:image="product.image"
       v-bind:price="product.price"
-      v-bind:quantity="product.quantity" />
+      v-bind:quantity="product.quantity"
+      v-bind:totalPrice="product.totalPrice"
+    />
   </section>
 </template>
 
