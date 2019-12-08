@@ -11,11 +11,16 @@
       v-bind:quantity="product.quantity"
       v-bind:totalPrice="product.totalPrice"
     />
+    <button
+      v-if="basket.length > 0"
+      v-on:click="emptyBasket()"
+      class="clear-all"
+    >Clear Shopping Cart</button>
   </section>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters, mapMutations } from 'vuex'
 import Header from './Header.vue'
 import Product from './Product.vue'
 
@@ -27,6 +32,9 @@ export default {
   },
   computed: {
     ...mapGetters(['basket'])
+  },
+  methods: {
+    ...mapMutations(['emptyBasket'])
   }
 }
 </script>
@@ -36,5 +44,18 @@ export default {
   flex: 1;
   padding: 40px 32px 40px 56px;
   overflow-y: auto;
+}
+
+.clear-all {
+  margin-top: 24px;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  width: 200px;
+  border-radius: 4px;
+  color: #7350ff;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 14px;
+  cursor: pointer;
 }
 </style>

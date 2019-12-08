@@ -96,6 +96,11 @@ export const store = new Vuex.Store({
       })
       state.basket.contents = filteredItems
     },
+    emptyBasket(state) {
+      state.basket.contents = []
+      state.basket.totalCost = 0
+      state.basket.numberOfItems = 0
+    },
     removeProduct(state, id) {
       state.basket.contents.map((el, i) => {
         if (el.id === id) {
