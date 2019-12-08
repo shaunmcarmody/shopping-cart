@@ -381,4 +381,12 @@ template {
   box-sizing: border-box;
 }
 
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  background-image: url("./assets/splash.png");
+  background-size: cover;
+}
+
 </style>

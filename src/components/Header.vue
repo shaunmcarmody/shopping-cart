@@ -13,7 +13,8 @@ export default {
 
 <style scoped>
 h1 {
-  padding-bottom: 16px;
   border-bottom: 1px solid rgba(33, 34, 64, 0.16);
+  font-size: 1.3rem;
+  padding-bottom: 16px;
 }
 </style>

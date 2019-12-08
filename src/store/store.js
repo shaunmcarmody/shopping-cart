@@ -20,7 +20,7 @@ export const store = new Vuex.Store({
       },
       {
         id: 'B082FRRRCY',
-        title: '1983 World Cup Shirt',
+        title: 'World Cup Shirt',
         image: 'https://images-na.ssl-images-amazon.com/images/I/91Oiov2C0ZL._AC_UL400_SR300,400_.jpg',
         price: 55
       },
