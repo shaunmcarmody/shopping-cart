@@ -20,7 +20,6 @@ export default {
 
 <style scoped>
 .shopping-cart {
-  border: 1px solid red;
   border-radius: 4px;
   background-color: #ffffff;
   display: flex;

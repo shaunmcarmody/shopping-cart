@@ -5,6 +5,19 @@ Vue.use(Vuex);
 
 export const store = new Vuex.Store({
   state: {
+    basket: {
+      contents: [
+        {
+          id: 'LL1786575566',
+          title: 'City Guide',
+          image: 'https://images-na.ssl-images-amazon.com/images/I/711ZjU9uamL._AC_UL400_SR278,400_.jpg',
+          price: 8,
+          quantity: 1
+        }
+      ],
+      count: 1,
+      totalCost: 8
+    },
     SKU: [
       {
         id: 'LL1786575566',
@@ -44,7 +57,19 @@ export const store = new Vuex.Store({
       }
     ]
   },
-  mutations: {},
-  actions: {},
-  getters: {},
+  mutations: {
+    // addProduct(state, product) {
+    //   state.basket.
+    // }
+  },
+  actions: {
+    addProduct({ commit }, product) {
+      commit('addProduct', product)
+    }
+  },
+  getters: {
+    basket: state => {
+      return state.basket.contents
+    }
+  },
 });
