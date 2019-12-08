@@ -16,9 +16,14 @@ export const store = new Vuex.Store({
           totalPrice: 8
         }
       ],
+      discountApplied: false,
       numberOfItems: 1,
       totalCost: 8
     },
+    discountCode: [
+      'timewax',
+      'blackfriday'
+    ],
     SKU: [
       {
         id: 'LL1786575566',
@@ -71,6 +76,10 @@ export const store = new Vuex.Store({
   getters: {
     basket: state => {
       return state.basket.contents
+    },
+    confirmTotalCost: state => {
+      const withDiscount = state.basket.totalCost * 0.9
+      return state.basket.discountApplied ? withDiscount : state.basket.totalCost
     },
     numberOfItems: state => {
       const num = state.basket.numberOfItems
