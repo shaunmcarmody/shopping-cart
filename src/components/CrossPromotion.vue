@@ -1,16 +1,31 @@
 <template>
   <section class="cross-promotion">
     <Header title="Recently viewed" />
+    <div class="preview">
+      <ItemPreview
+        v-for="product in SKU"
+        :key="product.id"
+        v-bind:id="product.id"
+        v-bind:title="product.title"
+        v-bind:image="product.image"
+        v-bind:price="product.price" />
+    </div>
   </section>
 </template>
 
 <script>
+import { mapState } from 'vuex'
 import Header from './Header.vue'
+import ItemPreview from './ItemPreview.vue'
 
 export default {
   name: 'CrossPromotion',
   components: {
-    Header
+    Header,
+    ItemPreview
+  },
+  computed: {
+    ...mapState(['SKU']),
   }
 }
 </script>
@@ -29,5 +44,4 @@ export default {
   padding: 40px 32px 40px 56px;
   width: calc(100% - 64px);
 }
-
 </style>

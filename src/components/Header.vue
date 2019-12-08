@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: 'ShoppingCartHeader',
+  name: 'Header',
   props: {
     title: String
   }
