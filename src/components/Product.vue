@@ -46,5 +46,6 @@ export default {
 .product {
   display: flex;
   align-items: center;
+  margin-bottom: 40px;
 }
 </style>

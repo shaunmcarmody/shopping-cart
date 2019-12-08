@@ -16,7 +16,7 @@ export const store = new Vuex.Store({
           totalPrice: 8
         }
       ],
-      count: 1,
+      numberOfItems: 1,
       totalCost: 8
     },
     SKU: [
@@ -71,6 +71,13 @@ export const store = new Vuex.Store({
   getters: {
     basket: state => {
       return state.basket.contents
+    },
+    numberOfItems: state => {
+      const num = state.basket.numberOfItems
+      return num == 1 ? `${num} Item`: `${num} Items`
+    },
+    totalCost: state => {
+      return state.basket.totalCost
     }
   },
 });
