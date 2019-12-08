@@ -20,13 +20,17 @@ export default {
 
 <style scoped>
 .shopping-cart {
+  border: 1px solid red;
+  border-radius: 4px;
+  background-color: #ffffff;
   display: flex;
   overflow-x: hidden;
   overflow-y: auto;
+  margin: auto;
+  margin-top: 60px;
   max-width: 1088px;
   max-height: 648px;
-  border-radius: 4px;
-  background-color: #ffffff;
+  width: calc(100% - 64px);
 }
 
 </style>
