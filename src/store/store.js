@@ -65,24 +65,52 @@ export const store = new Vuex.Store({
   },
   mutations: {
     addProduct(state, id) {
-      const numberOfItems = state.basket.numberOfItems
+      let updated = false
       state.basket.contents.map(el => {
         if (el.id === id) {
-          el.quantity += 1
-          el.totalPrice += el.cost
-          state.basket.numberOfItems += 1
-          state.basket.totalCost += el.price
+          if (el.quantity < 1000) {
+            el.quantity += 1
+            el.totalPrice += el.price
+            state.basket.numberOfItems += 1
+            state.basket.totalCost += el.price
+          }
+          updated = true
         }
-      })
+      });
 
-      if (numberOfItems === state.basket.numberOfItems) {
+      if (!updated) {
         const [item] = state.SKU.filter(el => el.id == id);
         state.basket.contents.push({ ...item, totalPrice: item.price, quantity: 1 })
         state.basket.totalCost += item.price
         state.basket.numberOfItems += 1
       }
-      // eslint-disable-next-line no-console
-      console.log(state.basket.totalCost);
+    },
+    deleteProduct(state, id) {
+      const filteredItems = state.basket.contents.filter(el => {
+        if (el.id !== id) {
+          return el
+        } else {
+          state.basket.numberOfItems -= el.quantity
+          state.basket.totalCost -= el.price * el.quantity
+        }
+      })
+      state.basket.contents = filteredItems
+    },
+    removeProduct(state, id) {
+      state.basket.contents.map((el, i) => {
+        if (el.id === id) {
+          if (el.quantity > 1) {
+            el.quantity -= 1
+            el.totalPrice -= el.price
+            state.basket.numberOfItems -= 1
+            state.basket.totalCost -= el.price
+          } else {
+            state.basket.contents.splice(i, 1)
+            state.basket.numberOfItems -= 1
+            state.basket.totalCost -= el.price
+          }
+        }
+      })
     }
   },
   actions: {},

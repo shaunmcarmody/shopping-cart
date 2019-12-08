@@ -1,6 +1,9 @@
 <template>
   <div class="item-quantity">
-    <button class="adjust">-</button>
+    <button
+      v-on:click="removeProduct(id)"
+      class="adjust"
+    >-</button>
     <div class="quantity">{{ quantity }}</div>
     <button
       v-on:click="addProduct(id)"
@@ -19,7 +22,7 @@ export default {
     quantity: Number
   },
   methods: {
-    ...mapMutations(['addProduct'])
+    ...mapMutations(['addProduct', 'removeProduct'])
   }
 }
 </script>
