@@ -1,14 +1,21 @@
 <template>
   <div class="discounts">
     <h3>Discounts</h3>
-    <input type="text" class="discount-code" placeholder="Enter discount code" />
-    <button>Apply</button>
+    <form v-on:submit="applyDiscount">
+      <input type="text" class="discount-code" placeholder="Enter discount code" />
+      <input type="submit" value="Apply" class="apply-discount">
+    </form>
   </div>
 </template>
 
 <script>
+import { mapMutations } from 'vuex';
+
 export default {
-  name: 'Discounts'
+  name: 'Discounts',
+  methods: {
+    ...mapMutations(['applyDiscount'])
+  }
 }
 </script>
 
@@ -16,7 +23,7 @@ export default {
 .discounts h3 {
   font-size: 1rem;
 }
-.discounts button {
+.apply-discount {
   border-radius: 4px;
   background: #7350ff;
   color: #ffffff;

@@ -85,6 +85,15 @@ export const store = new Vuex.Store({
         state.basket.numberOfItems += 1
       }
     },
+    applyDiscount(state, e) {
+      e.preventDefault()
+      if (!state.basket.discountApplied) {
+        const code = e.srcElement[0].value;
+        if (state.discountCode.includes(code)) {
+          state.basket.discountApplied = code
+        }
+      }
+    },
     deleteProduct(state, id) {
       const filteredItems = state.basket.contents.filter(el => {
         if (el.id !== id) {
