@@ -10,9 +10,7 @@ import { mapGetters } from 'vuex'
 
 export default {
   name: 'SummaryOverview',
-  props: {
-    totalCost: Number
-  },
+  props: {},
   computed: {
     ...mapGetters(['numberOfItems', 'totalCost'])
   }
